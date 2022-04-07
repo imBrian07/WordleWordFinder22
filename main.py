@@ -9,7 +9,8 @@ def main():
     print("------------------------------")
     GLetters = GoodLetters()
     BLetters = BadLetters()
-    result(GLetters, BLetters)
+    PLetters = PlacedLetters()
+    result(GLetters, BLetters, PLetters)
 
 def GoodLetters():
     GLetters = input("Good Letters: ")
@@ -21,9 +22,11 @@ def BadLetters():
 
 def PlacedLetters():
     PLetters = input("Placed Letters: ")
+    return PLetters
 
-def result(GLetters, BLetters):
+def result(gLetters, bLetters, pLetters):
+    word = df['words'].str.contains(pLetters) #check if a dataframe contains pLetters
+    print(word)
 
-
-
+#5756rows
 main()
